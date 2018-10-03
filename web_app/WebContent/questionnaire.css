@@ -1,0 +1,234 @@
+body {
+	margin: 0px;
+	pading: 0px;
+	background: #F0FFF0;
+}
+
+.what-question {
+	display: inline-block;
+	background-color: rgba(238, 238, 238, 0.2);
+	border: 3px solid rgba(136, 0, 0, 0.2);
+	margin: 0px 100px 0px 100px;
+}
+
+#question p {
+	font-size: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	background: #FF9999;
+	padding: 5px;
+	border: 1px solid #6699CC;
+}
+
+#question {
+	text-align: center;
+}
+
+#select {
+	font-size: 20px;
+	width: 500px;
+	margin: auto;
+	background: rgba(51, 204, 0, 0.2);
+}
+
+#select li {
+	list-style: none;
+}
+
+#select input[type=radio] {
+	width: 20px;
+	height: 20px;
+}
+#select p{
+	text-align: center;
+	
+}
+
+#transmission {
+	text-align: center;
+}
+
+#transmissionbt {
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	background: #668ad8; /*驛｢譎�ｿｽ鄙ｫ笆�驛｢譎｢�ｽｽ�ｽｳ雎ｼ�ｽｶ�ｿｽ�ｽｽ�ｽｲ*/
+	color: #FFF;
+	border-bottom: solid 4px #627295;
+	border-radius: 3px;
+}
+
+#transmissionbt :active {
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px); /*髣包ｽｳ闕ｵ譏ｶ�ｿｽ讌｢諱ｪ髴郁ｲｻ�ｽｿ�ｽ･*/
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); /*髯溷私�ｽｽ�ｽｱ驛｢�ｽｧ髮区ｩｸ�ｽｽ�ｽｰ闕ｳ螂��ｽｼ�ｿｽ驍ｵ�ｽｺ�ｿｽ�ｽｿ�ｽｽ*/
+	border-bottom: none;
+}
+
+#answer {
+	font-size: 20px;
+	text-align: center;
+}
+
+#describe {
+	background-color: rgba(238, 238, 238, 0.2);
+	border-style: none;
+	outline: none;
+}
+
+#describe-text {
+	display: none;
+	font-size: 14px;
+	margin: 0px 70px 10px 100px;
+}
+
+.header h1 {
+	font-size: 30px;
+	padding-bottom: 0px;
+	border-bottom: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	margin-top: 0px;
+	padding-top: 5px;
+}
+
+#access {
+	font-size: 12px;
+	float: right;
+	color: #000;
+}
+
+.header p {
+	font-size: 16px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+	border-top: 0px;
+	margin-top: 0px;
+	margin-left: 3px;
+}
+
+.header span {
+	padding-right: 30px;
+}
+
+.header {
+	margin-top: 0px;
+	padding-top: 0px;
+	color: #fff;
+	background: #5F9EA0;
+}
+
+/* .header {
+	position: fixed; 繝倥ャ繝�繝ｼ繧貞崋螳壹☆繧�
+	top: 0; 荳企Κ縺九ｉ驟咲ｽｮ縺ｮ蝓ｺ貅紋ｽ咲ｽｮ繧呈ｱｺ繧√ｋ
+	left: 0; 蟾ｦ縺九ｉ驟咲ｽｮ縺ｮ蝓ｺ貅紋ｽ咲ｽｮ繧呈ｱｺ繧√ｋ
+	width: 100%; 繝倥ャ繝�繝ｼ縺ｮ讓ｪ蟷�繧呈欠螳壹☆繧�
+	height: 35px; 繝倥ャ繝�繝ｼ縺ｮ鬮倥＆繧呈欠螳壹☆繧�
+	padding: 10px; 繝倥ャ繝�繝ｼ蜀�蛛ｴ縺ｮ菴咏區繧呈欠螳壹☆繧�(荳贋ｸ句ｷｦ蜿ｳ)
+	background-color: #31a9ee; 繝倥ャ繝�繝ｼ縺ｮ閭梧勹濶ｲ繧呈欠螳壹☆繧�
+	color: #000000;
+}
+ */
+.main-questionnaire {
+	text-align: center;
+}
+
+.main-questionnaire p {
+	color: #008B8B;
+}
+
+#past-num {
+	display: none;
+	font-size: 20px;
+	color: #008B8B;
+}
+
+#past-num span {
+	font-size: 30px;
+	color: #ff69b4;
+}
+
+#result {
+	
+}
+
+#resultbt {
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	background: #668ad8;
+	color: #FFF;
+	border-bottom: solid 4px #627295;
+	border-radius: 3px;
+}
+
+#resultbt :active {
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px); /*髣包ｽｳ闕ｵ譏ｶ�ｿｽ讌｢諱ｪ髴郁ｲｻ�ｽｿ�ｽ･*/
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); /*髯溷私�ｽｽ�ｽｱ驛｢�ｽｧ髮区ｩｸ�ｽｽ�ｽｰ闕ｳ螂��ｽｼ�ｿｽ驍ｵ�ｽｺ�ｿｽ�ｽｿ�ｽｽ*/
+	border-bottom: none;
+}
+
+#topbt {
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	color: #FFF;
+	background: #fd9535;
+	border-radius: 4px;
+	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0
+		rgba(0, 0, 0, 0.05);
+	font-weight: bold;
+	border: solid 2px #d27d00;
+}
+#topbt:active{
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+	
+}
+
+
+#twitterbt {
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	color: #FFF;
+	background: #fd9535;
+	border-radius: 4px;
+	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0
+		rgba(0, 0, 0, 0.05);
+	font-weight: bold;
+	border: solid 2px #d27d00;
+	
+}
+#twitter:active{
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+	
+	
+}
+
+.main-top {
+	text-align: center;
+	color: #c71585;
+}
+
+.main-top span {
+	text-align: center;
+	color: #ff69b4;
+}
+
+#pre-piechart {
+	visibility: hidden;
+	margin-left: 50px;
+	display: inline-block;
+}
+
+.footer {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	color: #fff;
+	background: #FFFFCC;
+}
