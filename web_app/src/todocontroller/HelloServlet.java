@@ -15,8 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class HelloServlet
+ * 
  */
-@WebServlet("/HelloServlet")
+@WebServlet("/helloServlet")
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Documents documents;
@@ -74,24 +75,13 @@ public class HelloServlet extends HttpServlet {
 		/**
 		 * アクセス数の更新
 		 */
-		access.access++;
-		request.setAttribute("access", access.access);
-
-		/**
-		 * アンケート文を変更するかどうかの判定
-		 */
-		if (timerTask.Changeboolean) {
-			result1 = result2 = result3 = result4 = 0;
-			old_result1 = timerTask.getResult1();
-			old_result2 = timerTask.getResult2();
-			old_result3 = timerTask.getResult3();
-			old_result4 = timerTask.getResult4();
-			timerTask.Changeboolean = false;
-		}
-
+		access.clientAccess();
+		request.setAttribute("access", access.getAccessNum());
+		
 		// Cookieを取得して既に投票済みかどうかを確認し処理を行う
 		GetCookies getCookies = new GetCookies(request, documents);
 		getCookies.get();
+		getCookies.isResult();
 
 		// アンケート内容を.jspへ送る
 		request.setAttribute("documents", documents.getDocument(documents.getIndex()));
@@ -103,16 +93,22 @@ public class HelloServlet extends HttpServlet {
 		request.setAttribute("select3", selects.getSelect(documents.getIndex())[3]);
 
 		/**
+		 * 前回のアンケート文を.jspへ送る しかし、ページに表示するかどうかはGetCookie.javaで判定する
+		 */
+		GraphData(request, response);
+
+		/**
+		 * アンケート文を更新するかどうかの判定
+		 */
+		ChangeDocument(timerTask.Changeboolean);
+
+		/**
 		 * 投票したかどうかの判定
 		 */
-		
-		System.out.println("server:"+request.getAttribute("result"));
-		
-		//変更点1
-		/*if (request.getAttribute("result") != null) {
+		if (request.getAttribute("result") != null) {
 			GetResult(request, response);
 		}
-*/
+
 		/**
 		 * questionnaire.jspをリクエストで送る
 		 */
@@ -128,13 +124,7 @@ public class HelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);               //log
-		System.out.println("server:"+request.getAttribute("result"));
-		//変更点１
-		if (request.getAttribute("result") != null) {
-			GetResult(request, response);
-		}
-		
+		doGet(request, response);
 	}
 
 	/**
@@ -153,13 +143,49 @@ public class HelloServlet extends HttpServlet {
 	}
 
 	/**
+	 * 設定時間を経過したときにアンケート文を更新する (timertask.javaのChangebooleanで変更を判定)
+	 */
+	public void ChangeDocument(boolean Changeboolean) {
+		if (Changeboolean) {
+			result1 = result2 = result3 = result4 = 0;
+			old_result1 = timerTask.getResult1();
+			old_result2 = timerTask.getResult2();
+			old_result3 = timerTask.getResult3();
+			old_result4 = timerTask.getResult4();
+			timerTask.Changeboolean = false;
+		}
+	}
+
+	/**
+	 * グラフのデータをjspへ送る setAttribute()で投票数と選択文をそれぞれ配列で送る
+	 */
+	public void GraphData(HttpServletRequest request, HttpServletResponse response) {
+		if (documents.getIndex() != 0) {
+
+			request.setAttribute("old_documents", documents.getDocument(documents.getIndex() - 1));
+
+			String[] old1 = { String.valueOf(old_result1), selects.getSelect(documents.getIndex() - 1)[0] };
+			request.setAttribute("old_result0", old1);
+
+			String[] old2 = { String.valueOf(old_result2), selects.getSelect(documents.getIndex() - 1)[1] };
+			request.setAttribute("old_result1", old2);
+
+			String[] old3 = { String.valueOf(old_result3), selects.getSelect(documents.getIndex() - 1)[2] };
+			request.setAttribute("old_result2", old3);
+
+			String[] old4 = { String.valueOf(old_result4), selects.getSelect(documents.getIndex() - 1)[3] };
+			request.setAttribute("old_result3", old4);
+		}
+
+	}
+
+	/**
 	 * 投票時の処理
 	 * 
 	 */
 	public void GetResult(HttpServletRequest request, HttpServletResponse response) {
 		// 投票の値を取得
-		int result = Integer.parseInt((String) request.getAttribute("result"));
-		System.out.println("GetResult:"+result);
+		int result = Integer.parseInt((String) request.getAttribute("q"));
 
 		// 投票値を保存
 		if (result == 1) {
@@ -177,10 +203,9 @@ public class HelloServlet extends HttpServlet {
 		 * Cookieでユーザのブラウザに投票値を付与
 		 */
 		Cookie cookied = new Cookie("questionnaire" + String.valueOf(documents.getIndex()), String.valueOf(result));
-		System.out.println("cookied:"+cookied.getName()+","+cookied.getValue());//log
 
 		// Cookieの生存時間を設定
-		cookied.setMaxAge(60 * 60 * 24);
+		cookied.setMaxAge(2 * 60 * 60 * 24);
 		response.addCookie(cookied);
 		request.setAttribute("result", null);
 	}

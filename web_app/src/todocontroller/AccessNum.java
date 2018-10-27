@@ -6,7 +6,7 @@ package todocontroller;
  *
  */
 public class AccessNum {
-	int access;
+	private int access;
 	
 	public AccessNum(){
 		access = 0;
@@ -14,5 +14,9 @@ public class AccessNum {
 	
 	public int getAccessNum(){
 		return access;
+	}
+	
+	public  void clientAccess(){
+		access++;
 	}
 }

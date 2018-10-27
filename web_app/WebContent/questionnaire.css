@@ -39,10 +39,6 @@ body {
 	width: 20px;
 	height: 20px;
 }
-#select p{
-	text-align: center;
-	
-}
 
 #transmission {
 	text-align: center;
@@ -119,17 +115,6 @@ body {
 	background: #5F9EA0;
 }
 
-/* .header {
-	position: fixed; 繝倥ャ繝�繝ｼ繧貞崋螳壹☆繧�
-	top: 0; 荳企Κ縺九ｉ驟咲ｽｮ縺ｮ蝓ｺ貅紋ｽ咲ｽｮ繧呈ｱｺ繧√ｋ
-	left: 0; 蟾ｦ縺九ｉ驟咲ｽｮ縺ｮ蝓ｺ貅紋ｽ咲ｽｮ繧呈ｱｺ繧√ｋ
-	width: 100%; 繝倥ャ繝�繝ｼ縺ｮ讓ｪ蟷�繧呈欠螳壹☆繧�
-	height: 35px; 繝倥ャ繝�繝ｼ縺ｮ鬮倥＆繧呈欠螳壹☆繧�
-	padding: 10px; 繝倥ャ繝�繝ｼ蜀�蛛ｴ縺ｮ菴咏區繧呈欠螳壹☆繧�(荳贋ｸ句ｷｦ蜿ｳ)
-	background-color: #31a9ee; 繝倥ャ繝�繝ｼ縺ｮ閭梧勹濶ｲ繧呈欠螳壹☆繧�
-	color: #000000;
-}
- */
 .main-questionnaire {
 	text-align: center;
 }
@@ -148,12 +133,10 @@ body {
 	font-size: 30px;
 	color: #ff69b4;
 }
-
-#result {
+#result{
 	
 }
-
-#resultbt {
+#resultbt{
 	display: inline-block;
 	padding: 0.5em 1em;
 	text-decoration: none;
@@ -162,52 +145,12 @@ body {
 	border-bottom: solid 4px #627295;
 	border-radius: 3px;
 }
-
 #resultbt :active {
 	-ms-transform: translateY(4px);
 	-webkit-transform: translateY(4px);
 	transform: translateY(4px); /*髣包ｽｳ闕ｵ譏ｶ�ｿｽ讌｢諱ｪ髴郁ｲｻ�ｽｿ�ｽ･*/
 	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); /*髯溷私�ｽｽ�ｽｱ驛｢�ｽｧ髮区ｩｸ�ｽｽ�ｽｰ闕ｳ螂��ｽｼ�ｿｽ驍ｵ�ｽｺ�ｿｽ�ｽｿ�ｽｽ*/
 	border-bottom: none;
-}
-
-#topbt {
-	position: relative;
-	display: inline-block;
-	padding: 0.25em 0.5em;
-	text-decoration: none;
-	color: #FFF;
-	background: #fd9535;
-	border-radius: 4px;
-	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0
-		rgba(0, 0, 0, 0.05);
-	font-weight: bold;
-	border: solid 2px #d27d00;
-}
-#topbt:active{
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
-	
-}
-
-
-#twitterbt {
-	position: relative;
-	display: inline-block;
-	padding: 0.25em 0.5em;
-	text-decoration: none;
-	color: #FFF;
-	background: #fd9535;
-	border-radius: 4px;
-	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0
-		rgba(0, 0, 0, 0.05);
-	font-weight: bold;
-	border: solid 2px #d27d00;
-	
-}
-#twitter:active{
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
-	
-	
 }
 
 .main-top {
@@ -227,8 +170,5 @@ body {
 }
 
 .footer {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	color: #fff;
-	background: #FFFFCC;
+	text-align: center;
 }
